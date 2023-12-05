@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Product = () => {
       const loadProducts = useLoaderData();
@@ -39,7 +39,16 @@ const Product = () => {
                               products.map(product =>
                                     <p key={product._id}>
                                           {product.name}:
-                                          {product.details} <button onClick={() => handleDelete(product._id)} className='btn'>X</button> </p>
+                                          {product.details}:-
+                                          {product._id} :
+                                          <Link to={`/update/${product._id}`}>
+                                                <button className='btn btn-primary'>
+                                                      Update
+                                                </button>
+
+                                          </Link>
+
+                                          <button onClick={() => handleDelete(product._id)} className='btn'>X</button> </p>
 
                               )
                         }

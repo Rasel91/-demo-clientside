@@ -11,7 +11,7 @@ const AddedProduct = () => {
             const details = form.details.value;
             console.log(name,photo,details)
           
-              const prodcutInfo = {name,photo,details}
+              const productInfo = {name,photo,details}
 
             // send data to client side to server side
 
@@ -20,7 +20,7 @@ const AddedProduct = () => {
                   headers:{
                         "Content-Type":"application/json"
                   },
-                  body:JSON.stringify(prodcutInfo)
+                  body:JSON.stringify(productInfo)
             })
             .then(res => res.json())
             .then(data => {
